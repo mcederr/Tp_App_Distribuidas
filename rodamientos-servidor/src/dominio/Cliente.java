@@ -3,6 +3,8 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import serializado.ClienteTO;
+
 
 public class Cliente{
 
@@ -56,5 +58,19 @@ public class Cliente{
 	}
 	public void setCondcondicionVenta(CondicionVenta condcondicionVenta) {
 		this.condcondicionVenta = condcondicionVenta;
+	}
+	public ClienteTO crearClienteTO(Cliente c){
+		
+		ClienteTO cto = new ClienteTO();
+		cto.setCondcondicionVenta(c.getCondcondicionVenta().crearCondicionVenta(c.getCondcondicionVenta()));
+		cto.setCuit(c.getCuit());
+		cto.setDireccion(c.getDireccion().crearDireccionTO(c.getDireccion()));
+		cto.setRazonSocial(c.getRazonSocial());
+		for (int i = 0; i < c.getSolicitudesCotizacion().size(); i++) {
+			cto.addSolicitudesCotizacion(c.getSolicitudesCotizacion().get(i).crearSolicitudCotizacionTO(c.getSolicitudesCotizacion().get(i)));
+		}
+		
+		return cto;
+		
 	}
 }

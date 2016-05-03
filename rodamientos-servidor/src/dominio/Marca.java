@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.MarcaTO;
+
 
 public class Marca {
 
@@ -32,5 +34,12 @@ public class Marca {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	public MarcaTO crearMarcaTO(Marca m) {
+		MarcaTO marcaTO = new MarcaTO();
+		marcaTO.setCategoria(m.getCategoria());
+		marcaTO.setNombre(m.getNombre());
+		marcaTO.setOrigen(m.getOrigen());
 		
+		return marcaTO;
+	}
 }

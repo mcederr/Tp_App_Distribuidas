@@ -1,5 +1,8 @@
 package dominio;
 
+import serializado.MarcaTO;
+import serializado.RodamientoTO;
+
 
 public class Rodamiento {
 
@@ -39,5 +42,15 @@ public class Rodamiento {
 	public void setSerie(String serie) {
 		this.serie = serie;
 	}
-	
+	public RodamientoTO crearRodamientoTO(Rodamiento r){
+		
+		MarcaTO mto = r.getMarca().crearMarcaTO(r.getMarca()); 
+		RodamientoTO rto = new RodamientoTO();
+		rto.setMarca(mto);
+		rto.setPrefijo(r.getPrefijo());
+		rto.setSerie(r.getSerie());
+		rto.setSufijo(r.getSufijo());
+		
+		return rto;
+	}
 }

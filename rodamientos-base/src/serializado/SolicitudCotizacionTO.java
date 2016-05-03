@@ -26,5 +26,8 @@ public class SolicitudCotizacionTO implements Serializable{
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	} 
+	public void addItemsSolicitudCotizacion(ItemSolicitudCotizacionTO itemSoliCotiTO){
+		this.itemsSolicitudCotizacion.add(itemSoliCotiTO);
+	}
 		
 }

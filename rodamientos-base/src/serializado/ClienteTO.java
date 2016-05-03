@@ -49,6 +49,9 @@ public class ClienteTO implements Serializable{
 			List<SolicitudCotizacionTO> solicitudesCotizacion) {
 		this.solicitudesCotizacion = solicitudesCotizacion;
 	}
+	public void addSolicitudesCotizacion(SolicitudCotizacionTO solicitudesCotizacionTO) {
+		this.solicitudesCotizacion.add(solicitudesCotizacionTO);
+	}
 	public CondicionVentaTO getCondcondicionVenta() {
 		return condcondicionVenta;
 	}

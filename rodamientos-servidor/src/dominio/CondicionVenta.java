@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.CondicionVentaTO;
+
 public class CondicionVenta {
 
 	private int id;
@@ -24,5 +26,11 @@ public class CondicionVenta {
 	public void setCoeficiente(Double coeficiente) {
 		this.coeficiente = coeficiente;
 	}
-	
+	public CondicionVentaTO crearCondicionVenta(CondicionVenta cv){
+		CondicionVentaTO cvto = new CondicionVentaTO();
+		cvto.setCoeficiente(cv.getCoeficiente());
+		cvto.setTipo(cv.getTipo());
+		
+		return cvto;
+	}
 }

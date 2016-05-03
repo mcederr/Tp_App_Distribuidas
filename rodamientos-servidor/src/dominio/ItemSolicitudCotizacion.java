@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.ItemSolicitudCotizacionTO;
+
 
 public class ItemSolicitudCotizacion {
 
@@ -25,5 +27,11 @@ public class ItemSolicitudCotizacion {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-
+	public ItemSolicitudCotizacionTO crearItemSolicitudCotizacionTO(ItemSolicitudCotizacion itemSoliCoti){
+		ItemSolicitudCotizacionTO itemTO = new ItemSolicitudCotizacionTO();
+		itemTO.setRodamiento(itemSoliCoti.getRodamiento().crearRodamientoTO(itemSoliCoti.getRodamiento()));
+		itemTO.setCantidad(itemSoliCoti.getCantidad());
+		
+		return itemTO;
+	}
 }

@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.DireccionTO;
+
 public class Direccion {
 
 	private int id;
@@ -51,5 +53,16 @@ public class Direccion {
 	}
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+	public DireccionTO crearDireccionTO(Direccion d){
+		DireccionTO dto = new DireccionTO();
+		dto.setCalle(d.getCalle());
+		dto.setCodigoPostal(d.getCodigoPostal());
+		dto.setLocalidad(d.getLocalidad());
+		dto.setNumero(d.getNumero());
+		dto.setPais(d.getPais());
+		dto.setProvincia(d.getProvincia());
+		
+		return dto;
 	}
 }
