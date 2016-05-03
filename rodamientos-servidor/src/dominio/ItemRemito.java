@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.ItemRemitoTO;
+
 public class ItemRemito {
 
 	private int id;
@@ -23,5 +25,11 @@ public class ItemRemito {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	
+	public ItemRemitoTO crearItemRemitoTO(ItemRemito itemRemito){
+		ItemRemitoTO itemTO = new ItemRemitoTO();
+		itemTO.setRodamiento(itemRemito.getRodamiento().crearRodamientoTO(itemRemito.getRodamiento()));
+		itemTO.setCantidad(itemRemito.getCantidad());
+		
+		return itemTO;
+	}
 }

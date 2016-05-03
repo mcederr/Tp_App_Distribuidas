@@ -3,6 +3,8 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import serializado.ProveedorTO;
+
 public class Proveedor {
 
 	private int id;
@@ -48,6 +50,26 @@ public class Proveedor {
 	}
 	public void setListasPrecios(List<ListaPrecio> listasPrecios) {
 		this.listasPrecios = listasPrecios;
+	}
+	
+	public CondicionCompra getCondicionCompra() {
+		return condicionCompra;
+	}
+	public void setCondicionCompra(CondicionCompra condicionCompra) {
+		this.condicionCompra = condicionCompra;
+	}
+	public ProveedorTO crearProveedorTO(Proveedor p){
+		ProveedorTO pto = new ProveedorTO();
+		pto.setCondicionCompra(p.getCondicionCompra().crearCondicionCompra(p.getCondicionCompra()));
+		pto.setDireccion(p.getDireccion().crearDireccionTO(p.getDireccion()));
+		
+		//Falta la lista de precios
+		
+		pto.setMail(p.getMail());
+		pto.setRazonSocial(p.getRazonSocial());
+		pto.setTelefono(p.getTelefono());
+		
+		return pto;
 	}
 	
 }

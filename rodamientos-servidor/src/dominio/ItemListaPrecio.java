@@ -1,5 +1,8 @@
 package dominio;
 
+import serializado.ItemListaPrecioTO;
+import serializado.ItemOrdenCompraTO;
+
 public class ItemListaPrecio {
 
 	private int id;
@@ -30,5 +33,12 @@ public class ItemListaPrecio {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
+	public ItemListaPrecioTO crearItemListaPrecioTO(ItemListaPrecio item){
+		ItemListaPrecioTO itemTO = new ItemListaPrecioTO();
+		itemTO.setRodamiento(item.getRodamiento().crearRodamientoTO(item.getRodamiento()));
+		itemTO.setPrecio(item.getPrecio());
+		itemTO.setStock(item.getStock());
+		
+		return itemTO;
+	}
 }

@@ -1,5 +1,7 @@
 package dominio;
 
+import serializado.ItemFacturaTO;
+
 public class ItemFactura {
 
 	private int id;
@@ -30,5 +32,13 @@ public class ItemFactura {
 	}
 	public void setPrecio(Double precio) {
 		this.precio = precio;
+	}
+	public ItemFacturaTO crearItemListaPrecioTO(ItemFactura item){
+		ItemFacturaTO itemTO = new ItemFacturaTO();
+		itemTO.setRodamiento(item.getRodamiento().crearRodamientoTO(item.getRodamiento()));
+		itemTO.setPrecio(item.getPrecio());
+		itemTO.setCantidad(item.getCantidad());
+		
+		return itemTO;
 	}
 }

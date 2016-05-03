@@ -1,5 +1,8 @@
 package dominio;
 
+import serializado.CondicionCompraTO;
+import serializado.CondicionVentaTO;
+
 public class CondicionCompra {
 
 	private int id;
@@ -31,5 +34,11 @@ public class CondicionCompra {
 	public void setFormaDePago(FormaDePago formaDePago) {
 		this.formaDePago = formaDePago;
 	}
-	
+	public CondicionCompraTO crearCondicionCompra(CondicionCompra cc){
+		CondicionCompraTO ccto = new CondicionCompraTO();
+		ccto.setCoeficiente(cc.getCoeficiente());
+		ccto.setTipo(cc.getTipo());
+		
+		return ccto;
+	}
 }

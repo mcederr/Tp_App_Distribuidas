@@ -1,5 +1,8 @@
 package dominio;
 
+import serializado.ItemCotizacionTO;
+import serializado.ItemFacturaTO;
+
 public class ItemCotizacion {
 
 	private int id;
@@ -38,5 +41,14 @@ public class ItemCotizacion {
 	public void setListaPrecio(ListaPrecio listaPrecio) {
 		this.listaPrecio = listaPrecio;
 	}
-	
+	public ItemCotizacionTO crearItemCotizacionTO(ItemCotizacion item){
+		ItemCotizacionTO itemTO = new ItemCotizacionTO();
+		itemTO.setRodamiento(item.getRodamiento().crearRodamientoTO(item.getRodamiento()));
+		itemTO.setPrecio(item.getPrecio());
+		itemTO.setCantidad(item.getCantidad());
+		
+		//Falta la lista de precio
+		
+		return itemTO;
+	}
 }
