@@ -3,18 +3,39 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import serializado.ClienteTO;
 
-
+@Entity
+@Table(name="CLIENTE")
 public class Cliente{
 
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="RAZON_SOCIAL")
 	private String razonSocial;
-	private Direccion direccion;
+	
+	@Transient private Direccion direccion;
+	
+	@Column(name="TELEFONO")
 	private String telefono;
+	
+	@Column(name="CUIT")
 	private String cuit;
-	private List<SolicitudCotizacion> solicitudesCotizacion = new ArrayList<SolicitudCotizacion>();
-	private CondicionVenta condcondicionVenta;
+	
+	@Transient private List<SolicitudCotizacion> solicitudesCotizacion = new ArrayList<SolicitudCotizacion>();
+	
+	@Transient private CondicionVenta condcondicionVenta;
 	
 	public int getId() {
 		return id;

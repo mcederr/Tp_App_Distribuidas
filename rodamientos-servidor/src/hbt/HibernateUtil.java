@@ -3,6 +3,7 @@ package hbt;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+import dominio.Cliente;
 import dominio.Cotizacion;
 import dominio.ItemCotizacion;
 import dominio.ItemOrdenCompra;
@@ -32,6 +33,7 @@ public class HibernateUtil
              config.addAnnotatedClass(ItemOrdenPedido.class);             
              config.addAnnotatedClass(OrdenCompra.class);
              config.addAnnotatedClass(ItemOrdenCompra.class); 
+             config.addAnnotatedClass(Cliente.class);
              
              sessionFactory = config.buildSessionFactory();
         }

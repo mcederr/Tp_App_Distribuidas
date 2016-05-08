@@ -10,7 +10,7 @@ import remoto.IGestionRodamientosRemota;
 public class AppWebCliente {
 
 	private IGestionRodamientosRemota gestionRodamientos;
-	
+	//
 	public AppWebCliente() {
 		this.gestionRodamientos = obtenerStub();
 	}
