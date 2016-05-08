@@ -1,5 +1,7 @@
 package app;
 
+import bean.srv.SolicitudCotizacionSRV;
+
 public class IniciarServidor {
     
 	public static void main(String[] args) {
@@ -9,5 +11,7 @@ public class IniciarServidor {
         } 
 		
 		new BS().publicarServicio();
+		//TO DO: HACER UN TEST DESDE PRESENTACION Y MOVER ESTO
+		SolicitudCotizacionSRV sc = new SolicitudCotizacionSRV();
 	}
 }

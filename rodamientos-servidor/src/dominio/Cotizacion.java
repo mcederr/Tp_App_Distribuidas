@@ -4,15 +4,41 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
+@Entity
+@Table(name="COTIZACION")
 public class Cotizacion {
 
+	@Id @Column(name="ID", columnDefinition="smallint")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private Cliente cliente;
+	
+	@Transient private Cliente cliente;
+	
+	@Column(name="FECHA_CREACION")
 	private Date fechaCreacion;
+	
+	@Column(name="TOTAL")
 	private Double total;
+	
+	@Column(name="FECHAVIGENCIA")
 	private Date fechaVigencia;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="ID_COTIZACION")
 	private List<ItemCotizacion> itemsCotizacion = new ArrayList<ItemCotizacion>();
+	
+	@Column(name="ESTA_VIGENTE")
 	private Boolean estaVigente;
 	
 	public int getId() {

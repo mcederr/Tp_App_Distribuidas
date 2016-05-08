@@ -1,15 +1,35 @@
 package dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import serializado.MarcaTO;
 import serializado.RodamientoTO;
 
-
+@Entity
+@Table(name="RODAMIENTO")
 public class Rodamiento {
 
+	@Id
+	@Column(name="ID", columnDefinition="smallint")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="PREFIJO")
 	private String prefijo;
+	
+	@Column(name="SUFIJO")
 	private String sufijo;
-	private Marca marca;
+	
+//	@Column(name="MARCA")
+	@Transient private Marca marca;
+	
+	@Column(name="SERIE")
 	private String serie;
 	
 	public int getId() {
@@ -52,5 +72,6 @@ public class Rodamiento {
 		rto.setSufijo(r.getSufijo());
 		
 		return rto;
+		
 	}
 }
