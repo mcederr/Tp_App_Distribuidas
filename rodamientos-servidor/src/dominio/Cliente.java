@@ -14,7 +14,7 @@ import javax.persistence.Transient;
 import serializado.ClienteTO;
 //Commit de pruea
 //modificacion para prueba de merge
-
+//Commit de pruea
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
