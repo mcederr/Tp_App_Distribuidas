@@ -18,6 +18,13 @@ import serializado.ClienteTO;
 //3
 
 //2
+
+//4
+
+
+
+
+//5
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
