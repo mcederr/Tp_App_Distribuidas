@@ -16,6 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 //commit de prueba desde copia
+//segundo cambio para verificar merge
 @Entity
 @Table(name="COTIZACION")
 public class Cotizacion {
