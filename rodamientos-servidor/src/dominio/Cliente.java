@@ -12,21 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import serializado.ClienteTO;
-//1
 
-
-//3
-
-//2
-
-
-//4
-
-
-
-
-//5
-//6
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
