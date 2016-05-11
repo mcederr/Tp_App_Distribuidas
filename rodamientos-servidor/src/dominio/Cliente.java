@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import serializado.ClienteTO;
-
+//Commit de pruea
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
