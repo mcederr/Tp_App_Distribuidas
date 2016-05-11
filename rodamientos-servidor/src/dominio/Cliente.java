@@ -13,8 +13,6 @@ import javax.persistence.Transient;
 
 import serializado.ClienteTO;
 
-//3
-
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
