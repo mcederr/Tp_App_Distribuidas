@@ -1,13 +1,33 @@
 package dominio;
 
-import serializado.CondicionCompraTO;
-import serializado.CondicionVentaTO;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import org.hibernate.annotations.CollectionOfElements;
+
+import serializado.CondicionCompraTO;
+
+@Entity
+@Table(name="CONDICION_COMPRA")
 public class CondicionCompra {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="TIPO")
 	private String tipo;
+	
+	@Column(name="COEFICIENTE")
 	private Double coeficiente;
+	
+	@Embedded 
 	private FormaDePago formaDePago;
 	
 	public int getId() {
