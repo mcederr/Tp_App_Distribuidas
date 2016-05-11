@@ -18,6 +18,7 @@ import serializado.CondicionCompraTO;
 public class CondicionCompra {
 
 	@Id
+	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
