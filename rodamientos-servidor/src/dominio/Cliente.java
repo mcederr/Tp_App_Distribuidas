@@ -12,7 +12,11 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import serializado.ClienteTO;
+<<<<<<< HEAD
 //1
+=======
+//2
+>>>>>>> branch 'master' of https://github.com/mcederr/Tp_App_Distribuidas.git
 @Entity
 @Table(name="CLIENTE")
 public class Cliente{
