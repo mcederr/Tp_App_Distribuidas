@@ -10,6 +10,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 @MappedSuperclass
+@Embeddable
 public class FormaDePago {
 	
 	@Column(name="DESCRIPCION")

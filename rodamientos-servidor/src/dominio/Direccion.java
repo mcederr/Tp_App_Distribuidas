@@ -1,15 +1,39 @@
 package dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import serializado.DireccionTO;
 
+@Embeddable
+
+@Entity @Table(name="Direccion")
 public class Direccion {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="Localidad")
 	private String localidad;
+	
+	@Column(name="Calle")
 	private String calle;
+	
+	@Column(name="Numero")
 	private int numero;
+	
+	@Column(name="CP")
 	private String codigoPostal;
+	
+	@Column(name="Provincia")
 	private String provincia;
+	
+	@Column(name="Pais")
 	private String pais;
 	
 	public int getId() {

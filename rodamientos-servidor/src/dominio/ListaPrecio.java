@@ -1,16 +1,42 @@
 package dominio;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity @Table(name="ListaPrecios")
 public class ListaPrecio {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@Column (name="Fecha_vigencia")
 	private Date fechaVigencia;
+	@Column(name="Vigencia")
 	private Boolean estaVigente;
+	
+//	@ManyToOne()
+//	@JoinColumn(name="Proveedor")
+	@Embedded
 	private Proveedor proveedor;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="idListaprecios")
 	private List<ItemListaPrecio> itemsListaPrecio = new ArrayList<ItemListaPrecio>();
+	
+	@Embedded
 	private DescuentoEspecial descuentoEspecial;
 	
 	public int getId() {

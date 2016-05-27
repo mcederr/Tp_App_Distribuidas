@@ -1,8 +1,10 @@
 package dominio;
 
+import javax.persistence.Embeddable;
+
 import serializado.MarcaTO;
 
-
+@Embeddable
 public class Marca {
 
 	private int id;

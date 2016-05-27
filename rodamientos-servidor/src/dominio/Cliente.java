@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,8 @@ import serializado.ClienteTO;
 
 @Entity
 @Table(name="CLIENTE")
+
+@Embeddable
 public class Cliente{
 
 	@Id
@@ -30,7 +33,8 @@ public class Cliente{
 	@Column(name="RAZON_SOCIAL")
 	private String razonSocial;
 	
-	@Transient private Direccion direccion;
+	//@Transient 
+	@Embedded private Direccion direccion;
 	
 	@Column(name="TELEFONO")
 	private String telefono;

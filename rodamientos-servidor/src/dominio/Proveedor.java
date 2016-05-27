@@ -3,16 +3,42 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import serializado.ProveedorTO;
 
+@Entity @Table(name="Proveedores")
+@Embeddable
 public class Proveedor {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="Razon_Social")
 	private String razonSocial;
+	@Embedded
 	private Direccion direccion;
+	@Column(name="Telefono")
 	private String telefono;
+	
+	@Column(name="Mail")
 	private String mail;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_proveedor")
 	private List<ListaPrecio> listasPrecios = new ArrayList<ListaPrecio>();
+	
+	@Embedded
 	private CondicionCompra condicionCompra;
 	
 	public int getId() {

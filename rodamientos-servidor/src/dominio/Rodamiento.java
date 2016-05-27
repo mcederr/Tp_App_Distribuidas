@@ -1,6 +1,7 @@
 package dominio;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,9 @@ public class Rodamiento {
 	private String sufijo;
 	
 //	@Column(name="MARCA")
-	@Transient private Marca marca;
+	//@Transient 
+	@Embedded 
+	private Marca marca;
 	
 	@Column(name="SERIE")
 	private String serie;

@@ -1,14 +1,31 @@
 package dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import serializado.ItemListaPrecioTO;
 import serializado.ItemOrdenCompraTO;
 
+@Entity @Table(name="Item_ListaPrecio")
 public class ItemListaPrecio {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Embedded
 	private Rodamiento rodamiento;
+	
+	@Column (name="Precio")
 	private Double precio;
+	
+	@Column(name="Stock")
 	private int stock;
+	
 	public int getId() {
 		return id;
 	}

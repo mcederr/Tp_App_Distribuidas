@@ -2,13 +2,32 @@ package dominio;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity @Table(name="Facturas")
 public class Factura {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Embedded
 	private Cliente cliente;
+	
+	@Column(name="Total")
 	private Double total;
+	
+	@Column(name="FechaCreacion")
 	private Date fechaCreacion;
+	
+	@Embedded
 	private FormaDePago formaDePago;
+	
 	public int getId() {
 		return id;
 	}
