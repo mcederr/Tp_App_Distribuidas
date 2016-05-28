@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+rodamientos-servidor/.classpath
+rodamientos-servidor/src/hibernate.properties
