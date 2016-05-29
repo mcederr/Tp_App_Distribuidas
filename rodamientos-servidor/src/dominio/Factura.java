@@ -1,13 +1,17 @@
 package dominio;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity @Table(name="Facturas")
@@ -27,6 +31,10 @@ public class Factura {
 	
 	@Embedded
 	private FormaDePago formaDePago;
+	
+//	@OneToMany(cascade=CascadeType.ALL)
+//	@JoinColumn(name="id_factura")
+//	List<ItemFactura> itemsfactura;
 	
 	public int getId() {
 		return id;

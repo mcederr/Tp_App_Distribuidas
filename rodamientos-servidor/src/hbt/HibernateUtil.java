@@ -5,20 +5,25 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 import dominio.Cliente;
 import dominio.CondicionVenta;
+import dominio.Contado;
 import dominio.Cotizacion;
 import dominio.DescuentoEspecial;
 import dominio.Direccion;
 import dominio.Factura;
+import dominio.Financiacion;
 import dominio.FormaDePago;
 import dominio.ItemCotizacion;
+import dominio.ItemFactura;
 import dominio.ItemListaPrecio;
 import dominio.ItemOrdenCompra;
 import dominio.ItemOrdenPedido;
+import dominio.ItemRemito;
 import dominio.ItemSolicitudCotizacion;
 import dominio.ListaPrecio;
 import dominio.OrdenCompra;
 import dominio.OrdenPedido;
 import dominio.Proveedor;
+import dominio.Remito;
 import dominio.Rodamiento;
 import dominio.SolicitudCotizacion;
  
@@ -48,9 +53,14 @@ public class HibernateUtil
              config.addAnnotatedClass(ListaPrecio.class);
              config.addAnnotatedClass(ItemListaPrecio.class);
              config.addAnnotatedClass(DescuentoEspecial.class);
-             config.addAnnotatedClass(Direccion.class);
              
              config.addAnnotatedClass(Factura.class);
+             config.addAnnotatedClass(ItemFactura.class);
+             config.addAnnotatedClass(Remito.class);
+             config.addAnnotatedClass(ItemRemito.class);
+             config.addAnnotatedClass(FormaDePago.class);
+             config.addAnnotatedClass(Contado.class);
+             config.addAnnotatedClass(Financiacion.class);
              
              sessionFactory = config.buildSessionFactory();
         }

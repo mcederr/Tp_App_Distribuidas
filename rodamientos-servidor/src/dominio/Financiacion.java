@@ -5,14 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Financiacion")
 public class Financiacion extends FormaDePago{
 
-	@Id
-	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
 	
 	@Column(name="CANTIDAD_DIAS")
 	private int cantidadDias;
@@ -31,12 +29,6 @@ public class Financiacion extends FormaDePago{
 	}
 	public void setRecargo(Float recargo) {
 		this.recargo = recargo;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	

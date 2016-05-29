@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,8 @@ public class OrdenCompra {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Transient private Proveedor proveedor;
+	@Transient
+	private Proveedor proveedor;
 	
 	@Column(name="FECHA_CREACION")
 	private Date fechaCreacion;

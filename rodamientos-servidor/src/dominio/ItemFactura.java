@@ -1,12 +1,30 @@
 package dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import serializado.ItemFacturaTO;
 
+@Entity
+@Table(name="ItemFactura")
 public class ItemFactura {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Embedded
 	private Rodamiento rodamiento;
+	
+	@Column(name="Cantidad")
 	private int cantidad;
+	
+	@Column(name="Precio")
 	private Double precio;
 	
 	public int getId() {

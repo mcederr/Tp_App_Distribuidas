@@ -1,12 +1,29 @@
 package dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import serializado.ItemRemitoTO;
 
+@Entity 
+@Table(name="ItemRemito")
 public class ItemRemito {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@Embedded
 	private Rodamiento rodamiento;
+	
+	@Column(name="Cantidad")
 	private int cantidad;
+	
 	public int getId() {
 		return id;
 	}
