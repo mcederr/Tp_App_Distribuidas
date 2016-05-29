@@ -28,7 +28,10 @@ public class SolicitudCotizacion {
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="ID_SOLICITUD_COTIZACION")
 	private List<ItemSolicitudCotizacion> itemsSolicitudCotizacion = new ArrayList<ItemSolicitudCotizacion>();
-		
+	
+	@Column(name="Precio")
+	private Double precio;
+	
 	public int getId() {
 		return id;
 	}
@@ -42,10 +45,17 @@ public class SolicitudCotizacion {
 			List<ItemSolicitudCotizacion> itemsSolicitudCotizacion) {
 		this.itemsSolicitudCotizacion = itemsSolicitudCotizacion;
 	}
+	
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
 	public void addItemsSolicitudCotizacion(ItemSolicitudCotizacion itemSolCot){
 		this.itemsSolicitudCotizacion.add(itemSolCot);
 	}	
-
+	
 	public SolicitudCotizacionTO crearSolicitudCotizacionTO(SolicitudCotizacion sc){
 		SolicitudCotizacionTO scto = new SolicitudCotizacionTO();
 		for (int i = 0; i < sc.getItemsSolicitudCotizacion().size(); i++) {

@@ -2,7 +2,10 @@ package bean.dao;
 
 import hbt.HibernateUtil;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
+import dominio.SolicitudCotizacion;
 
 
 public class HibernateSolicitudCotizacionDAO {
@@ -16,6 +19,24 @@ public class HibernateSolicitudCotizacionDAO {
 		} 
 		return instancia;
 	}
+	
+	//Metodos que se pueden realizar contra la b.datos
+		public void guardarSolicitud(SolicitudCotizacion solCotizacion){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(solCotizacion);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
+	
+	
+	
 //	
 //	@SuppressWarnings("unchecked")
 //	public List<Club> listClubes(){
