@@ -21,7 +21,7 @@ import serializado.SolicitudCotizacionTO;
 @Table(name="SOLICITUD_COTIZACION")
 public class SolicitudCotizacion {
 
-	@Id @Column(name="ID", columnDefinition="smallint")
+	@Id @Column(name="Id_Solocitud", columnDefinition="smallint")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	

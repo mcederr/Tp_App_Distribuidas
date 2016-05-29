@@ -17,8 +17,8 @@ import serializado.RodamientoTO;
 public class Rodamiento {
 
 	@Id
-	@Column(name="ID", columnDefinition="smallint")
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ID", columnDefinition="smallint")
 	private int id;
 	
 	@Column(name="PREFIJO")

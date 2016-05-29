@@ -1,11 +1,18 @@
 package bean.srv;
 
+import dominio.SolicitudCotizacion;
 import bean.dao.HibernateSolicitudCotizacionDAO;
 
 public class SolicitudCotizacionSRV {
 	private static HibernateSolicitudCotizacionDAO dao;
 	static {
 		dao = HibernateSolicitudCotizacionDAO.getInstancia();
+	}
+	
+public void guardarSolicitud(SolicitudCotizacion solicitud){
+		
+		dao.guardarSolicitud(solicitud);
+	
 	}
 	
 //	public List<Club> listClubes(){

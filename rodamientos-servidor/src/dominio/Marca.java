@@ -1,15 +1,25 @@
 package dominio;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import serializado.MarcaTO;
 
 @Embeddable
 public class Marca {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ID")
 	private int id;
+	@Column(name="Nombre")
 	private String nombre;
+	@Column(name="Origen")
 	private String origen;
+	@Column(name="Categoria")
 	private String categoria;
 	
 	public int getId() {
