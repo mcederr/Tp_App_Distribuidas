@@ -32,9 +32,9 @@ public class Factura {
 	@Embedded
 	private FormaDePago formaDePago;
 	
-//	@OneToMany(cascade=CascadeType.ALL)
-//	@JoinColumn(name="id_factura")
-//	List<ItemFactura> itemsfactura;
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_factura")
+	List<ItemFactura> itemsfactura;
 	
 	public int getId() {
 		return id;
