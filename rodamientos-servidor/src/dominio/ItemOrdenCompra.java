@@ -12,7 +12,7 @@ import serializado.ItemOrdenCompraTO;
 import serializado.ItemOrdenPedidoTO;
 
 @Entity
-@Table(name="ITEM_SOLICITUD_COTIZACION")
+@Table(name="ITEM_ORDEN_COMPRA")
 public class ItemOrdenCompra {
 
 	@Id
