@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -18,12 +19,11 @@ import serializado.ItemSolicitudCotizacionTO;
 public class ItemSolicitudCotizacion {
 
 	@Id
-	@Column(name="ID", columnDefinition="smallint")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="ID_RODAMIENTO")
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Rodamiento")
 	private Rodamiento rodamiento;
 	
 	@Column(name="CANTIDAD")

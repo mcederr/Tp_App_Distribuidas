@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import dominio.Cliente;
+import dominio.CondicionCompra;
 import dominio.CondicionVenta;
 import dominio.Contado;
 import dominio.Cotizacion;
@@ -47,12 +48,11 @@ public class HibernateUtil
              config.addAnnotatedClass(OrdenCompra.class);
              config.addAnnotatedClass(ItemOrdenCompra.class); 
              config.addAnnotatedClass(Cliente.class);
-             config.addAnnotatedClass(CondicionVenta.class);
+             config.addAnnotatedClass(CondicionCompra.class);
              
              config.addAnnotatedClass(Proveedor.class);
              config.addAnnotatedClass(ListaPrecio.class);
              config.addAnnotatedClass(ItemListaPrecio.class);
-             config.addAnnotatedClass(DescuentoEspecial.class);
              
              config.addAnnotatedClass(Factura.class);
              config.addAnnotatedClass(ItemFactura.class);

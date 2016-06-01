@@ -27,9 +27,8 @@ public class ListaPrecio {
 	@Column(name="Vigencia")
 	private Boolean estaVigente;
 	
-//	@ManyToOne()
-//	@JoinColumn(name="Proveedor")
-	@Embedded
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Proveedor")
 	private Proveedor proveedor;
 	
 	@OneToMany(cascade=CascadeType.ALL)

@@ -15,11 +15,9 @@ import javax.persistence.Table;
 @Table(name="FormaDePago")
 
 @Inheritance(strategy=InheritanceType.JOINED)
-@Embeddable
 public class FormaDePago {
 	
 	@Id 
-	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(name="DESCRIPCION")

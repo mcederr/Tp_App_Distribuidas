@@ -12,13 +12,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import serializado.ProveedorTO;
 
 @Entity @Table(name="Proveedores")
-@Embeddable
+//@Embeddable
 public class Proveedor {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -38,7 +39,8 @@ public class Proveedor {
 	@JoinColumn(name="Id_proveedor")
 	private List<ListaPrecio> listasPrecios = new ArrayList<ListaPrecio>();
 	
-	@Embedded
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_CondicionCompra")
 	private CondicionCompra condicionCompra;
 	
 	public int getId() {

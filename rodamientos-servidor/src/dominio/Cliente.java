@@ -26,7 +26,6 @@ import serializado.ClienteTO;
 public class Cliente{
 
 	@Id
-	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
@@ -43,10 +42,10 @@ public class Cliente{
 	private String cuit;
 	
 	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Cliente")
 	private List<SolicitudCotizacion> solicitudesCotizacion = new ArrayList<SolicitudCotizacion>();
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="ID_CONDICION_COMPRA")
+	@Embedded
 	private CondicionVenta condcondicionVenta;
 	
 	public int getId() {

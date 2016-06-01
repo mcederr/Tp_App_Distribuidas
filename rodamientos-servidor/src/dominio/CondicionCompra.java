@@ -1,5 +1,6 @@
 package dominio;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -16,11 +19,10 @@ import serializado.CondicionCompraTO;
 
 @Entity
 @Table(name="CONDICION_COMPRA")
-@Embeddable
+//@Embeddable
 public class CondicionCompra {
 
 	@Id
-	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
@@ -30,7 +32,8 @@ public class CondicionCompra {
 	@Column(name="COEFICIENTE")
 	private Double coeficiente;
 	
-	@Embedded 
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_FormaPago")
 	private FormaDePago formaDePago;
 	
 	public int getId() {

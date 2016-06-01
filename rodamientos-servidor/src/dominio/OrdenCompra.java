@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -20,11 +21,12 @@ import javax.persistence.Transient;
 @Table(name="ORDEN_COMPRA")
 public class OrdenCompra {
 
-	@Id @Column(name="ID", columnDefinition="smallint")
+	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Transient
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_proveedor")
 	private Proveedor proveedor;
 	
 	@Column(name="FECHA_CREACION")
@@ -34,7 +36,7 @@ public class OrdenCompra {
 	private String estado;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-//	@JoinColumn(name="ID_ORDEN_COMPRA")
+	@JoinColumn(name="ID_ORDEN_COMPRA")
 	private List<OrdenPedido> ordenesPedidos = new ArrayList<OrdenPedido>();
 	
 	@OneToMany(cascade=CascadeType.ALL)

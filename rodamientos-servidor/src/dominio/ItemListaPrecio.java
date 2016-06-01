@@ -1,11 +1,14 @@
 package dominio;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import serializado.ItemListaPrecioTO;
@@ -17,7 +20,8 @@ public class ItemListaPrecio {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Embedded
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Rodamiento")
 	private Rodamiento rodamiento;
 	
 	@Column (name="Precio")

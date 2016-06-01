@@ -2,11 +2,13 @@ package dominio;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -19,12 +21,11 @@ import serializado.ItemFacturaTO;
 public class ItemCotizacion {
 
 	@Id
-	@Column(name="ID", columnDefinition="smallint")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="ID_RODAMIENTO")
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Rodamiento")
 	private Rodamiento rodamiento;
 	
 	@Column(name="CANTIDAD")
@@ -33,7 +34,9 @@ public class ItemCotizacion {
 	@Column(name="PRECIO")
 	private Double precio;
 	
-	@Transient private ListaPrecio listaPrecio;
+	@ManyToOne()
+	@JoinColumn(name="Id_ListaPrecio")
+	private ListaPrecio listaPrecio;
 	
 	public int getId() {
 		return id;

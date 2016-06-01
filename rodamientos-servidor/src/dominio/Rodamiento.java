@@ -18,7 +18,6 @@ public class Rodamiento {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID", columnDefinition="smallint")
 	private int id;
 	
 	@Column(name="PREFIJO")

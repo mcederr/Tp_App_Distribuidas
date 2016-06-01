@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,7 +30,8 @@ public class Factura {
 	@Column(name="FechaCreacion")
 	private Date fechaCreacion;
 	
-	@Embedded
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_FormaPago")
 	private FormaDePago formaDePago;
 	
 	@OneToMany(cascade=CascadeType.ALL)
