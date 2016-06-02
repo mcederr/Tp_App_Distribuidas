@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SOLICITUD DE COTIZACION -->
 
-<SolicitudCotizacion numero="1" fecha="12/12/2016">
+<SolicitudCotizacion numero="1" fecha="12/12/2016" precio="200">
 		
 	<Cliente>
 
@@ -13,12 +13,13 @@
 	<Rodamientos>
 		
 		<Item serie="22310">
-
+			<Prefijo>AA2DD</Prefijo>
 			<Sufijo>CCW33</Sufijo>
 			<Marca>ZKL</Marca>
 			<Origen>Japon</Origen>
 			<Cantidad>1000</Cantidad>
-
+			<Categoria>2da</Categoria>
+			
 		</Item>
 		
 	</Rodamientos>

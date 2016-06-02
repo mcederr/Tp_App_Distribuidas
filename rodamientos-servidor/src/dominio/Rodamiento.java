@@ -26,9 +26,7 @@ public class Rodamiento {
 	@Column(name="SUFIJO")
 	private String sufijo;
 	
-//	@Column(name="MARCA")
-	//@Transient 
-	@Embedded 
+	@Embedded
 	private Marca marca;
 	
 	@Column(name="SERIE")

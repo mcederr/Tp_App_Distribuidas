@@ -94,7 +94,7 @@ public class CotizacionXML {
 		}
 	}
 
-	void saveDomXML() {
+	public void saveDomXML() {
 		// Crea instancia de TransformerFactory
 		TransformerFactory tranFactory = TransformerFactory.newInstance();
 		Transformer tran;

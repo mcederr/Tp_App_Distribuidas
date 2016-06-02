@@ -5,6 +5,7 @@ import hbt.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import dominio.Cotizacion;
 import dominio.SolicitudCotizacion;
 
 

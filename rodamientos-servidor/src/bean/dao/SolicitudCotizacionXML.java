@@ -9,6 +9,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import dominio.Cliente;
 import dominio.ItemSolicitudCotizacion;
 import dominio.Marca;
 import dominio.Rodamiento;
@@ -24,6 +25,7 @@ public class SolicitudCotizacionXML {
 		ArrayList<ItemSolicitudCotizacion> items = new ArrayList<ItemSolicitudCotizacion>();
 		Rodamiento r = new Rodamiento ();
 		Marca m = new Marca();
+		Cliente c=new Cliente();
 		
 		// Debo obtener el ID y la Cantidad
 		ItemSolicitudCotizacion ir = new ItemSolicitudCotizacion();
@@ -54,7 +56,7 @@ public class SolicitudCotizacionXML {
 			//NOTA: si se usan valores autoincrementales no puedo
 			//setear el valor del ID por lo cual HIBERNATE indicaria del error
 			//s.setId(Integer.parseInt(node.getAttributeNode("numero").getTextContent()));
-			
+			s.setPrecio(Double.valueOf(node.getAttribute("precio")));
 			//Recorro todos los items que hay en la solicitud
 			NodeList lista = node.getElementsByTagName("Item");
 
@@ -78,7 +80,7 @@ public class SolicitudCotizacionXML {
 				//el criterio que se va a tomar
 				m.setNombre(elemento.getElementsByTagName("Marca").item(0).getTextContent());
 				m.setOrigen(elemento.getElementsByTagName("Origen").item(0).getTextContent());
-				
+				m.setCategoria(elemento.getElementsByTagName("Categoria").item(0).getTextContent());
 				
 				//El Id del rodamiento lo asigna Hibernate
 				//por lo tanto no es necesario setearlo
@@ -89,7 +91,7 @@ public class SolicitudCotizacionXML {
 				//r.setPrefijo(prefijo);
 				
 				r.setSerie(elemento.getAttribute("serie"));
-				
+				r.setPrefijo(elemento.getElementsByTagName("Prefijo").item(0).getTextContent());
 				r.setSufijo(elemento.getElementsByTagName("Sufijo").item(0).getTextContent());
 				
 				ir.setRodamiento(r);

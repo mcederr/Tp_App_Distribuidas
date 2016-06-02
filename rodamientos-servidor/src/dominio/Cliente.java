@@ -32,7 +32,6 @@ public class Cliente{
 	@Column(name="RAZON_SOCIAL")
 	private String razonSocial;
 	
-	//@Transient 
 	@Embedded private Direccion direccion;
 	
 	@Column(name="TELEFONO")
