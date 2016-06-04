@@ -35,6 +35,20 @@ public class HibernateSolicitudCotizacionDAO {
 			session.close();
 		
 		}
+		
+public void guardarCotizacion(CotizacionXML cotizacion){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(cotizacion);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
 	
 	
 	

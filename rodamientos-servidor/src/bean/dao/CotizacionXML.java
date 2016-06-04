@@ -24,10 +24,11 @@ public class CotizacionXML {
 	 
 	 static final String ARCHIVO = "Cotizacion.xml";
 	
-	public void guardarDatosCotizacionXML(Cotizacion c){
+	public void guardarDatosCotizacionXML(){
+		
+		Cotizacion c=new Cotizacion();
 		
 		try {
-
 			// Crea instancia de DocumentBuilderFactory
 			// Para crear un documento se debe primero instanciar un
 			// BuilderFactory
