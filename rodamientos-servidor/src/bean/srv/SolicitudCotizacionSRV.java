@@ -17,12 +17,6 @@ public void guardarSolicitud(SolicitudCotizacion solicitud){
 	
 	}
 
-public void guardarCotizacion(CotizacionXML cotizacion){
-	
-	dao.guardarCotizacion(cotizacion);
-
-}
-
 	
 //	public List<Club> listClubes(){
 //		return dao.listClubes();
