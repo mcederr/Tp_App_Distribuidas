@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ORDEN DE PEDIDO -->
+<OrdenDePedido numero="6001">
+	<Fecha>01/06/2012</Fecha>
+	<Estado>Pendiente</Estado>
+	
+	<Cliente>
+		<Cuit>123456789</Cuit>
+		<RazonSocial>Test</RazonSocial>
+		<Localidad>Capital Federal</Localidad>
+		<Calle>Calle</Calle>
+		<Numero>1234</Numero>
+		<CP>1444</CP>
+		<Provincia>Bs As</Provincia>
+		<Pais>Argentina</Pais>
+		<Telefono>45674588</Telefono>
+		<Tipo>2</Tipo>
+		<Coeficiente>2</Coeficiente>
+	</Cliente>
+		
+	<Cotizacion>
+		<Numero>3001</Numero>
+		<Fecha>01/06/2012</Fecha>
+		<Total>200</Total>
+		<FechaVigencia>02/06/2014</FechaVigencia>
+		<EstaVigente>True</EstaVigente>
+	</Cotizacion>
+	
+		<CondicionesDeVenta>
+			<PagoContado>
+				<Descuento>5</Descuento>
+			</PagoContado>
+			<Financiacion>
+				<CantidadDias>30</CantidadDias>
+					<Recargo>10</Recargo>
+			</Financiacion>
+		</CondicionesDeVenta>
+			
+		<Rodamientos>
+				<Item serie="987">
+					<Prefijo>EE2NN</Prefijo>
+					<Sufijo>ESN</Sufijo>
+					<Marca>Marca2</Marca>
+					<Origen>Argentina</Origen>
+					<Cantidad>5</Cantidad>
+					<Categoria>2da</Categoria>
+					<Estado>Pedido</Estado>
+				</Item>
+			</Rodamientos>
+			
+	
+		
+</OrdenDePedido>

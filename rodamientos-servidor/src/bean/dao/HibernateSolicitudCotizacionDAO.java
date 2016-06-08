@@ -5,7 +5,11 @@ import hbt.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import dominio.Cliente;
 import dominio.Cotizacion;
+import dominio.ListaPrecio;
+import dominio.OrdenPedido;
+import dominio.Proveedor;
 import dominio.SolicitudCotizacion;
 
 
@@ -35,7 +39,64 @@ public class HibernateSolicitudCotizacionDAO {
 			session.close();
 		
 		}
+		
+		
+		public void guardarListaPrecio(ListaPrecio listaprecio){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(listaprecio);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
+		
+		public void guardarOrdenPedido(OrdenPedido ordenpedido){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(ordenpedido);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
 	
+		
+		public void guardarCliente(Cliente cliente){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(cliente);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
+		
+		public void guardarProveedor(Proveedor proveedor){
+			
+			Session session = sf.openSession();
+			session.beginTransaction();
+
+			session.persist(proveedor);
+
+			
+			session.flush();
+			session.getTransaction().commit();
+			session.close();
+		
+		}
 	
 	
 //	

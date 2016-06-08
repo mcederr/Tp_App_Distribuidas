@@ -10,6 +10,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import dominio.Cliente;
+import dominio.Direccion;
 import dominio.ItemSolicitudCotizacion;
 import dominio.Marca;
 import dominio.Rodamiento;
@@ -26,6 +27,7 @@ public class SolicitudCotizacionXML {
 		Rodamiento r = new Rodamiento ();
 		Marca m = new Marca();
 		Cliente c=new Cliente();
+		Direccion d=new Direccion();
 		
 		// Debo obtener el ID y la Cantidad
 		ItemSolicitudCotizacion ir = new ItemSolicitudCotizacion();

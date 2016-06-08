@@ -19,7 +19,7 @@ import javax.persistence.Table;
 import serializado.ProveedorTO;
 
 @Entity @Table(name="Proveedores")
-//@Embeddable
+
 public class Proveedor {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

@@ -22,9 +22,9 @@ public class ListaPrecio {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@Column (name="Fecha_vigencia")
+	@Column (name="Fecha_vigencia", columnDefinition="Date")
 	private Date fechaVigencia;
-	@Column(name="Vigencia")
+	@Column(name="Vigencia", columnDefinition="bit")
 	private Boolean estaVigente;
 	
 	@ManyToOne(cascade=CascadeType.ALL)

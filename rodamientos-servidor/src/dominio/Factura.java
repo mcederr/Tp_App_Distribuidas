@@ -21,7 +21,8 @@ public class Factura {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Embedded
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Id_Cliente")
 	private Cliente cliente;
 	
 	@Column(name="Total")

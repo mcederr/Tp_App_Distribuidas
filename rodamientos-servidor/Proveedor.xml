@@ -1,0 +1,21 @@
+<Proveedor>
+	<RazonSocial> Test</RazonSocial>
+	<Localidad>Capital Federal</Localidad>
+	<Calle>Calle</Calle>
+	<Numero>123</Numero>
+	<CP>1888</CP>
+	<Provincia>Buenos Aires</Provincia>
+	<Pais> Argentina</Pais>
+	<Telefono> 456544544</Telefono>
+	<Mail>mail@test.com</Mail>
+	
+	<CondicionCompra>
+		<Tipo>2</Tipo>
+		<Coeficiente>2</Coeficiente>
+		<FormaDePago>
+			<Descripcion>Descripcion</Descripcion>
+		</FormaDePago>
+	</CondicionCompra>
+	
+	
+</Proveedor>

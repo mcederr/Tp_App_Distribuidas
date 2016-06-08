@@ -28,7 +28,7 @@ public class OrdenPedido {
 	@JoinColumn(name="ID_ORDEN_PEDIDO")
 	private List<ItemOrdenPedido> itemsOrdenPedido = new ArrayList<ItemOrdenPedido>();
 	
-	@Column(name="FECHA_CREACION")
+	@Column(name="FECHA_CREACION", columnDefinition="date")
 	private Date fechaCreacion;
 	
 	@ManyToOne(cascade=CascadeType.ALL)

@@ -22,7 +22,6 @@ import serializado.ClienteTO;
 @Entity
 @Table(name="CLIENTE")
 
-@Embeddable
 public class Cliente{
 
 	@Id

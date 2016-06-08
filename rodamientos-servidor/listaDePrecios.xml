@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LISTA DE PRECIOS -->
+<ListaPrecios numero="1"
+	tipo="general-oferta">
+		<Fecha>01/06/2012</Fecha>
+		<Vigencia>True</Vigencia>
+
+	<Proveedor>
+		<RazonSocial> Test2</RazonSocial>
+		<Localidad>Capital Federal</Localidad>
+		<Calle>Calle</Calle>
+		<Numero>123456</Numero>
+		<CP>1666</CP>
+		<Provincia>Buenos Aires</Provincia>
+		<Pais> Argentina</Pais>
+		<Telefono> 46545644</Telefono>
+		<Mail>mail2@test.com</Mail>
+			<CondicionCompra>
+				<Tipo>2</Tipo>
+				<Coeficiente>2</Coeficiente>
+				<FormaDePago>
+					<Descripcion>Descripcion</Descripcion>
+				</FormaDePago>
+			</CondicionCompra>
+			
+	</Proveedor>
+
+	<DescuentoEspecial>
+		<Tipo>2</Tipo>
+		<Coeficiente>1</Coeficiente>
+	</DescuentoEspecial>
+	
+	<Rodamientos>
+		<Item serie="987">
+			<Prefijo>SS2AA</Prefijo>
+			<Sufijo>EAN</Sufijo>
+			<Marca>SKF</Marca>
+			<Origen>Argentina</Origen>
+			<Precio>48</Precio>
+			<Stock>100</Stock>
+			<Categoria>2da</Categoria>
+		</Item>
+		
+	</Rodamientos>
+</ListaPrecios>

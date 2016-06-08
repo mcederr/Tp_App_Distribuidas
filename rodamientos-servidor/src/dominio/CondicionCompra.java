@@ -19,7 +19,7 @@ import serializado.CondicionCompraTO;
 
 @Entity
 @Table(name="CONDICION_COMPRA")
-//@Embeddable
+
 public class CondicionCompra {
 
 	@Id

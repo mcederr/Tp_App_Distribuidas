@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Cliente>
+
+	<Cuit>123</Cuit>
+	<RazonSocial>Rodamiento S.A</RazonSocial>
+	<Localidad>Capital Federal</Localidad>
+	<Calle>Calle</Calle>
+	<Numero>123</Numero>
+	<CP>1888</CP>
+	<Provincia>Bs As</Provincia>
+	<Pais>Argentina</Pais>
+	<Telefono>45674544</Telefono>
+	<Tipo>2</Tipo>
+	<Coeficiente>1</Coeficiente>
+
+	<SolicitudCotizacion>
+		<numero>1</numero>
+		<Precio>150 </Precio>
+	</SolicitudCotizacion>
+
+
+</Cliente>

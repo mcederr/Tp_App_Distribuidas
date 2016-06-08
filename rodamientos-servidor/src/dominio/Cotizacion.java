@@ -29,13 +29,13 @@ public class Cotizacion {
 	@JoinColumn(name="Id_Cliente")
 	private Cliente cliente;
 	
-	@Column(name="FECHA_CREACION")
+	@Column(name="FECHA_CREACION", columnDefinition="date")
 	private Date fechaCreacion;
 	
 	@Column(name="TOTAL")
 	private Double total;
 	
-	@Column(name="FECHAVIGENCIA")
+	@Column(name="FECHAVIGENCIA", columnDefinition="date")
 	private Date fechaVigencia;
 	
 	@OneToMany(cascade=CascadeType.ALL)
