@@ -13,20 +13,17 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Comment;
 import org.w3c.dom.Element;
 
-import dominio.Cotizacion;
+public class OrdenCompraXML {
 
-public class CotizacionXML {
-
-	 Document doc;
-	 
-	 static final String ARCHIVO = "Cotizacion.xml";
 	
-	public void guardarDatosCotizacionXML(){
+	Document doc;
+	 
+	 static final String ARCHIVO = "OrdenCompra.xml";
+	
+	public void guardarDatosOrdenCompraXML(){
 		
-		Cotizacion c=new Cotizacion();
 		
 		try {
 			// Crea instancia de DocumentBuilderFactory
@@ -50,7 +47,7 @@ public class CotizacionXML {
 
 			// Una vez creado el documento en blanco comienzo la carga de datos
 			// crea el elemento raÌz y lo agrega al documento
-			Element root = doc.createElement("Cotizacion");
+			Element root = doc.createElement("OrdenCompra");
 			
 			root.setAttribute("numero","1");
 
@@ -58,11 +55,9 @@ public class CotizacionXML {
 			doc.appendChild(root);
 
 			// crea elemento hijo(se debe instanciar)
-			Element hijo = doc.createElement("Vigencia");
-
-			hijo.setAttribute("Fecha", "12/12/2016");
+			Element hijo = doc.createElement("Emision");
 			
-			hijo.setAttribute("Termino", "30");
+			hijo.setTextContent("12/12/2016");
 			
 			root.appendChild(hijo);
 			
@@ -73,71 +68,34 @@ public class CotizacionXML {
 			
 			root.appendChild(hijo);
 
-			hijo = doc.createElement("CondicionesDeVenta");
+			
+			
+			hijo = doc.createElement("Rodamientos");
 			
 			root.appendChild(hijo);
 			
-			Element prm = doc.createElement("PagoContado");
+			Element prm = doc.createElement("Item");
 			hijo.appendChild(prm);
 			
-			Element prm2=doc.createElement("Descuento");
-			prm2.setTextContent("10");
+			
+			Element prm2=doc.createElement("Serie");
+			prm2.setTextContent("22310");
 			prm.appendChild(prm2);
-			
-			Element prm3=doc.createElement("Financiacion");
-			hijo.appendChild(prm3);
-			
-			Element prm4=doc.createElement("CantidadDias");
-			prm4.setTextContent("4");
-			prm3.appendChild(prm4);
-			Element prm5=doc.createElement("Recargo");
-			prm5.setTextContent("10%");
-			prm3.appendChild(prm5);
-			
-			
-			hijo = doc.createElement("Referencia");
-			
-			root.appendChild(hijo);
-			
-			Element prm6 = doc.createElement("SolicitudCotizacion");
-			hijo.appendChild(prm6);
-			
-			Element prm7=doc.createElement("Numero");
-			prm7.setTextContent("1");
-			prm6.appendChild(prm7);
-			Element prm8=doc.createElement("Fecha");
-			prm8.setTextContent("12/12/2016");
-			prm6.appendChild(prm8);
-			
-			
-			Element prm9 = doc.createElement("Rodamientos");
-			hijo.appendChild(prm9);
-			
-			Element prm10 = doc.createElement("Item");
-			prm9.appendChild(prm10);
-			
-			
-			Element prm11=doc.createElement("Serie");
-			prm11.setTextContent("22310");
-			prm10.appendChild(prm11);
-			Element prm12=doc.createElement("Prefijo");
-			prm12.setTextContent("AA22NN");
-			prm10.appendChild(prm12);
-			Element prm13=doc.createElement("Sufijo");
-			prm13.setTextContent("CCW33");
-			prm10.appendChild(prm13);
-			Element prm14=doc.createElement("Marca");
-			prm14.setTextContent("ZKL");
-			prm10.appendChild(prm14);
-			Element prm15=doc.createElement("Origen");
-			prm15.setTextContent("Japon");
-			prm10.appendChild(prm15);
-			Element prm16=doc.createElement("Precio");
-			prm16.setTextContent("3000");
-			prm10.appendChild(prm16);
-			Element prm17=doc.createElement("Cantidad");
-			prm17.setTextContent("1000");
-			prm10.appendChild(prm17);
+			Element prm3=doc.createElement("Prefijo");
+			prm3.setTextContent("AA22NN");
+			prm.appendChild(prm3);
+			Element prm4=doc.createElement("Sufijo");
+			prm4.setTextContent("CCW33");
+			prm.appendChild(prm4);
+			Element prm5=doc.createElement("Marca");
+			prm5.setTextContent("ZKL");
+			prm.appendChild(prm5);
+			Element prm6=doc.createElement("Origen");
+			prm6.setTextContent("Japon");
+			prm.appendChild(prm6);
+			Element prm7=doc.createElement("Cantidad");
+			prm7.setTextContent("1000");
+			prm.appendChild(prm7);
 			
 			
 			
@@ -191,5 +149,7 @@ public class CotizacionXML {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 }

@@ -13,18 +13,18 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Comment;
 import org.w3c.dom.Element;
 
 import dominio.Cotizacion;
 
-public class CotizacionXML {
+public class FacturaXML {
 
-	 Document doc;
-	 
-	 static final String ARCHIVO = "Cotizacion.xml";
 	
-	public void guardarDatosCotizacionXML(){
+	Document doc;
+	 
+	 static final String ARCHIVO = "Factura.xml";
+	
+	public void guardarDatosFacturaXML(){
 		
 		Cotizacion c=new Cotizacion();
 		
@@ -50,7 +50,7 @@ public class CotizacionXML {
 
 			// Una vez creado el documento en blanco comienzo la carga de datos
 			// crea el elemento raÌz y lo agrega al documento
-			Element root = doc.createElement("Cotizacion");
+			Element root = doc.createElement("Factura");
 			
 			root.setAttribute("numero","1");
 
@@ -58,11 +58,11 @@ public class CotizacionXML {
 			doc.appendChild(root);
 
 			// crea elemento hijo(se debe instanciar)
-			Element hijo = doc.createElement("Vigencia");
+			Element hijo = doc.createElement("Fechas");
 
-			hijo.setAttribute("Fecha", "12/12/2016");
+			hijo.setAttribute("Emision", "12/12/2016");
 			
-			hijo.setAttribute("Termino", "30");
+			hijo.setAttribute("Vencimiento", "20/12/2016");
 			
 			root.appendChild(hijo);
 			
@@ -70,6 +70,7 @@ public class CotizacionXML {
 			
 			hijo.setAttribute("Cuit", "123");
 			hijo.setAttribute("RazonSocial", "Rodamiento S.A");
+			hijo.setAttribute("CondicionIva", "Responsable");
 			
 			root.appendChild(hijo);
 
@@ -99,7 +100,7 @@ public class CotizacionXML {
 			
 			root.appendChild(hijo);
 			
-			Element prm6 = doc.createElement("SolicitudCotizacion");
+			Element prm6 = doc.createElement("Remito");
 			hijo.appendChild(prm6);
 			
 			Element prm7=doc.createElement("Numero");

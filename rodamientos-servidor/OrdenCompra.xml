@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><OrdenCompra numero="1"><Emision>12/12/2016</Emision><Cliente Cuit="123" RazonSocial="Rodamiento S.A"/><Rodamientos><Item><Serie>22310</Serie><Prefijo>AA22NN</Prefijo><Sufijo>CCW33</Sufijo><Marca>ZKL</Marca><Origen>Japon</Origen><Cantidad>1000</Cantidad></Item></Rodamientos></OrdenCompra>

@@ -13,20 +13,20 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Comment;
 import org.w3c.dom.Element;
 
 import dominio.Cotizacion;
 
-public class CotizacionXML {
+public class RemitoXML {
 
-	 Document doc;
-	 
-	 static final String ARCHIVO = "Cotizacion.xml";
 	
-	public void guardarDatosCotizacionXML(){
+	Document doc;
+	 
+	 static final String ARCHIVO = "Remito.xml";
+	
+	public void guardarDatosRemitoXML(){
 		
-		Cotizacion c=new Cotizacion();
+
 		
 		try {
 			// Crea instancia de DocumentBuilderFactory
@@ -50,7 +50,7 @@ public class CotizacionXML {
 
 			// Una vez creado el documento en blanco comienzo la carga de datos
 			// crea el elemento raÌz y lo agrega al documento
-			Element root = doc.createElement("Cotizacion");
+			Element root = doc.createElement("Remito");
 			
 			root.setAttribute("numero","1");
 
@@ -58,11 +58,9 @@ public class CotizacionXML {
 			doc.appendChild(root);
 
 			// crea elemento hijo(se debe instanciar)
-			Element hijo = doc.createElement("Vigencia");
+			Element hijo = doc.createElement("Emision");
 
-			hijo.setAttribute("Fecha", "12/12/2016");
-			
-			hijo.setAttribute("Termino", "30");
+			hijo.setTextContent("12/12/2016");
 			
 			root.appendChild(hijo);
 			
@@ -72,34 +70,13 @@ public class CotizacionXML {
 			hijo.setAttribute("RazonSocial", "Rodamiento S.A");
 			
 			root.appendChild(hijo);
-
-			hijo = doc.createElement("CondicionesDeVenta");
-			
-			root.appendChild(hijo);
-			
-			Element prm = doc.createElement("PagoContado");
-			hijo.appendChild(prm);
-			
-			Element prm2=doc.createElement("Descuento");
-			prm2.setTextContent("10");
-			prm.appendChild(prm2);
-			
-			Element prm3=doc.createElement("Financiacion");
-			hijo.appendChild(prm3);
-			
-			Element prm4=doc.createElement("CantidadDias");
-			prm4.setTextContent("4");
-			prm3.appendChild(prm4);
-			Element prm5=doc.createElement("Recargo");
-			prm5.setTextContent("10%");
-			prm3.appendChild(prm5);
 			
 			
 			hijo = doc.createElement("Referencia");
 			
 			root.appendChild(hijo);
 			
-			Element prm6 = doc.createElement("SolicitudCotizacion");
+			Element prm6 = doc.createElement("OrdenPedido");
 			hijo.appendChild(prm6);
 			
 			Element prm7=doc.createElement("Numero");
@@ -132,12 +109,9 @@ public class CotizacionXML {
 			Element prm15=doc.createElement("Origen");
 			prm15.setTextContent("Japon");
 			prm10.appendChild(prm15);
-			Element prm16=doc.createElement("Precio");
-			prm16.setTextContent("3000");
+			Element prm16=doc.createElement("Cantidad");
+			prm16.setTextContent("1000");
 			prm10.appendChild(prm16);
-			Element prm17=doc.createElement("Cantidad");
-			prm17.setTextContent("1000");
-			prm10.appendChild(prm17);
 			
 			
 			
@@ -191,5 +165,6 @@ public class CotizacionXML {
 			e.printStackTrace();
 		}
 	}
+	
 	
 }

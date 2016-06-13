@@ -2,9 +2,12 @@ package inicio;
 
 import bean.dao.ClienteXML;
 import bean.dao.CotizacionXML;
+import bean.dao.FacturaXML;
 import bean.dao.ListaPrecioXML;
+import bean.dao.OrdenCompraXML;
 import bean.dao.OrdenPedidoXML;
 import bean.dao.ProveedorXML;
+import bean.dao.RemitoXML;
 import bean.dao.SolicitudCotizacionXML;
 import dominio.Cliente;
 import dominio.ListaPrecio;
@@ -27,9 +30,9 @@ public class main {
 		scsrv.guardarSolicitud(sc);
 		
 		CotizacionXML c=new CotizacionXML();
-		c.saveDomXML();
-		
 		c.guardarDatosCotizacionXML();
+		
+		c.saveDomXML();
 		
 		ListaPrecioXML l = new ListaPrecioXML();
 		ListaPrecio lis = l.leerXML();
@@ -44,6 +47,21 @@ public class main {
 		
 		SolicitudCotizacionSRV scsrv3 = new SolicitudCotizacionSRV();
 		scsrv3.guardarOrdenPedido(ord);
+		
+		OrdenCompraXML oc=new OrdenCompraXML();
+		oc.guardarDatosOrdenCompraXML();
+		
+		oc.saveDomXML();
+		
+		FacturaXML f=new FacturaXML();
+		f.guardarDatosFacturaXML();
+		
+		f.saveDomXML();
+		
+		RemitoXML r=new RemitoXML();
+		r.guardarDatosRemitoXML();
+		
+		r.saveDomXML();
 		
 		ClienteXML cli=new ClienteXML();
 		Cliente cliente=cli.leerXML();
